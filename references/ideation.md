@@ -27,3 +27,9 @@ Include:
 
 Use a User Story or Bug for independently acceptable value or behavior. Use a Task for implementation work within an existing story. Do not create cards for trivial substeps.
 
+## Parent tiers
+
+An Epic or Feature is a work item, not a folder. It needs the same problem, user value, and observable closing condition a story needs, because it is what someone reads first when asking what the project is doing.
+
+Creating a parent tier up front as a taxonomy is legitimate. Leaving it empty afterwards is not. When the user asks for a structure before the work under it is shaped, say inside each parent that it is an unshaped placeholder and what would have to be answered to shape it. An acknowledged placeholder is visible debt; an empty description is invisible debt that reads as a real item.
+
