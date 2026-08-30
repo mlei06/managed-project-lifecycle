@@ -20,10 +20,9 @@ for file in $staged; do
     done
 done
 
-if git diff --cached -U0 | grep -nEi '^\+.*(api[_-]?key|secret|password|token)[[:space:]]*[=:][[:space:]]*["'"']?[A-Za-z0-9_-]{16,}' >/dev/null 2>&1; then
+if git diff --cached -U0 | grep -nEi '^\+.*(api[_-]?key|secret|password|token)[[:space:]]*[=:][[:space:]]*[^[:space:]]{16,}' >/dev/null 2>&1; then
     echo "Rejected: a staged line looks like hardcoded credential material." >&2
     fail=1
 fi
 
 exit "$fail"
-
