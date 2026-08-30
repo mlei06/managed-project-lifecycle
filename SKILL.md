@@ -37,6 +37,7 @@ Load only the references required for the active mode.
 - Development occurs on a work-item branch, not the canonical branch, except for the one-time empty-repository genesis procedure.
 - Every commit and PR names the authorizing work item.
 - Discovered out-of-scope work becomes a separate work item or remains untouched.
+- Parent items are shaped and stated like their children. Closing a child never leaves its parent's state or intent unreviewed.
 - Tests and documentation ship with the behavior they describe.
 - A work item is complete only after its acceptance criteria pass, its PR is merged, documentation is current, and a closing summary is posted.
 - When Azure DevOps is unreachable, provide a proposed work item in chat and stop before implementation. Never create pending-work-item files.

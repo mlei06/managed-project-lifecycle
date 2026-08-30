@@ -11,11 +11,19 @@ Verify `az`, the `azure-devops` extension, authentication, and read access befor
 - Search before creating.
 - Use the project process's real work-item types and states.
 - Put product value and observable behavior in the item, not an implementation-only description.
+- Shape every tier. An Epic or Feature with an empty description is unshaped work no matter how many children it has.
 - Include failure cases, documentation impact, boundaries, dependencies, and tests.
 - Post a start-plan comment before implementation.
 - Link parent, blocking, related, document, branch, commit, and PR relationships explicitly when supported.
 - Move to review when the PR is open, not when local implementation ends.
 - Move to done only after merge and a closing summary.
+- Keep parent state consistent with its children: active once a child starts, done only when every child is done or removed and the parent's own acceptance holds.
+
+## Hygiene queries
+
+A query that exists to find neglected work must not filter on the condition that defines the neglect. A query for unshaped parents that excludes the initial state cannot see a parent that never left it, so it reports zero while the debt grows behind it.
+
+Before trusting a hygiene query, run it against an item it is supposed to catch and confirm the item appears. A query that has never returned a row has not been verified, it has only been written.
 
 ## CLI safety
 
