@@ -1,0 +1,22 @@
+# System
+
+## Current system
+
+Describe only components and behavior that exist today.
+
+## Planned system
+
+Describe intended components and behavior, clearly labeled as planned.
+
+## Boundaries
+
+Record project-specific boundaries from `.agents/project.json` and explain their purpose.
+
+## Data and interfaces
+
+Describe stored records, schemas, interfaces, endpoints, and external integrations when they exist.
+
+## Configuration and operation
+
+Document setup, configuration, run, deployment, recovery, and troubleshooting behavior.
+

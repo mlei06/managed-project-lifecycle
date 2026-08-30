@@ -1,0 +1,29 @@
+#!/bin/sh
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$staged" ] && exit 0
+fail=0
+
+for file in $staged; do
+    case "$file" in
+        .env|.env.*|*.key|*.pem)
+            [ "$file" = ".env.example" ] && continue
+            echo "Rejected: $file looks like a secret or environment file." >&2
+            fail=1 ;;
+    esac
+
+    for prefix in $(git config --get-all managed.sensitivePath); do
+        case "$file" in
+            "$prefix"|"$prefix"/*)
+                echo "Rejected: $file is under configured sensitive path $prefix." >&2
+                fail=1 ;;
+        esac
+    done
+done
+
+if git diff --cached -U0 | grep -nEi '^\+.*(api[_-]?key|secret|password|token)[[:space:]]*[=:][[:space:]]*["'"']?[A-Za-z0-9_-]{16,}' >/dev/null 2>&1; then
+    echo "Rejected: a staged line looks like hardcoded credential material." >&2
+    fail=1
+fi
+
+exit "$fail"
+

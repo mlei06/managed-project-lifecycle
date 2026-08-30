@@ -1,0 +1,4 @@
+interface:
+  display_name: "Managed Project Lifecycle"
+  short_description: "Scaffold and deliver traceable software projects"
+  default_prompt: "Use $managed-project-lifecycle to onboard or develop this project under the shared lifecycle standard."

@@ -1,0 +1,21 @@
+# {{PROJECT_NAME}}
+
+{{PROJECT_SUMMARY}}
+
+## Status
+
+{{PROJECT_MATURITY}}. Describe what works today and keep planned behavior explicitly separate.
+
+## Quick start
+
+Setup: `{{SETUP_COMMAND}}`
+
+Tests: `{{TEST_COMMAND}}`
+
+## Documentation
+
+- [Product](docs/product.md)
+- [System](docs/system.md)
+- [Quality](docs/quality.md)
+- [Decisions](docs/decisions/)
+

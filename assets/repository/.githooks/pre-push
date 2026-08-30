@@ -1,0 +1,24 @@
+#!/bin/sh
+branch=$(git rev-parse --abbrev-ref HEAD)
+trunk=$(git config managed.trunk)
+
+if [ -z "$trunk" ]; then
+    echo "Push rejected: managed.trunk is not configured. Run scripts/setup_hooks.py." >&2
+    exit 1
+fi
+
+if [ "$branch" = "$trunk" ]; then
+    echo "Push rejected: '$branch' is the canonical branch; use a reviewed PR." >&2
+    exit 1
+fi
+
+types=$(git config managed.branchTypes)
+[ -n "$types" ] || types='feature|bugfix|hotfix|docs|refactor|chore'
+
+if ! printf '%s' "$branch" | grep -Eq "^(${types})/[0-9]+-"; then
+    echo "Push rejected: '$branch' must be <type>/<work-item-id>-<slug>." >&2
+    exit 1
+fi
+
+exit 0
+

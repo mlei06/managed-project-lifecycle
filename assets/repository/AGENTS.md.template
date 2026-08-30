@@ -1,0 +1,12 @@
+# Agent bootstrap
+
+Use the `managed-project-lifecycle` skill for onboarding, ideation, scaffolding, implementation, documentation, Git, and Azure DevOps work in this repository.
+
+Project-specific configuration is in `.agents/project.json`. Read it before meaningful work. Before changing the repository, read every path listed in `orientation.required` and the ADRs relevant to the affected components.
+
+Read-only review, diagnosis, explanation, and ideation do not require a work item. Meaningful repository changes do.
+
+Do not invent work-item IDs. If Azure DevOps is unavailable, provide the proposed work item in chat and stop before implementation. Do not create pending-work-item files.
+
+Project-specific instructions in this file or `.agents/project.json` override reusable defaults.
+

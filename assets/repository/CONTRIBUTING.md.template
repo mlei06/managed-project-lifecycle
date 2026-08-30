@@ -1,0 +1,8 @@
+# Contributing
+
+This repository follows the `managed-project-lifecycle` standard. See `AGENTS.md` and `.agents/project.json` for the project bootstrap and local configuration.
+
+Meaningful changes require an Azure DevOps work item, a work-item branch, tests, current documentation, and a linked pull request. Work is complete only after merge.
+
+Run the commands in `.agents/project.json`, update the authoritative document for each changed fact, and complete `.azuredevops/pull_request_template.md` before review.
+

@@ -1,0 +1,22 @@
+# Quality
+
+## Verification commands
+
+Record the real test, lint, build, and evaluation commands from `.agents/project.json`.
+
+## What is tested
+
+Describe behavior covered by automated and manual verification.
+
+## What is not tested
+
+Name important gaps explicitly.
+
+## Measurements
+
+Every measurement must include its date, conditions, configuration, and corpus or sample size.
+
+## Known limitations and technical debt
+
+Record gaps, shortcuts, risks, and deferred work without presenting them as completed behavior.
+
